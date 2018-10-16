@@ -29,13 +29,16 @@
       }
     },
     methods: {
-      _isBirthday() {
-        let today = new Date()
-        return today.getMonth() === this.profile.birthday.month - 1 && today.getDate() === this.profile.birthday.day
-      },
-      goToProfile(){
-        this.$router.push('/profile')
-      },
+        _isBirthday() {
+            let today = this.getToday();
+            return today.getMonth() === this.profile.birthday.month - 1 && today.getDate() === this.profile.birthday.day
+        },
+        goToProfile() {
+            this.$router.push('/profile')
+        },
+        getToday() {
+            return new Date();
+        }
     }
   }
 </script>
